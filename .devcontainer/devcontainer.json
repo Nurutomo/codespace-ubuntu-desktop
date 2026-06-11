@@ -1,0 +1,21 @@
+{
+  "name": "Ubuntu Desktop with Chrome",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "codespaces-password"
+    }
+  },
+  "forwardPorts": [
+    5901,
+    6080
+  ],
+  "portsAttributes": {
+    "6080": {
+      "label": "Web Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
