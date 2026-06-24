@@ -12,6 +12,9 @@
     5901,
     6080
   ],
+  "runArgs": [
+    "--shm-size=8g"
+  ],
   "portsAttributes": {
     "6080": {
       "label": "Web Desktop",
