@@ -1,0 +1,14 @@
+qemu-system-x86_64 \
+  -accel tcg,thread=multi \
+  -cpu max,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time \
+  -smp 4 \
+  -m 4096 \
+  -device virtio-vga-gl \
+  -display sdl,gl=on \
+  -bios /usr/share/ovmf/OVMF.fd \
+  -drive file=~/win11.qcow2,if=virtio,format=qcow2 \
+  -drive file=~/Downloads/Win11_24H2_EnglishInternational_x64.iso,index=0,media=cdrom \
+  -drive file=~/Downloads/virtio-win-0.1.285.iso,index=1,media=cdrom \
+  -device usb-ehci,id=usb \
+  -device usb-tablet \
+  -nic user,model=virtio-net-pci
